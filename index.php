@@ -37,6 +37,8 @@
             <div class="card-body">
 
               <!-- Para fazer com que o formulário html se comunique com o servidor primeiro utilizamos na tag form, o "action" -->
+
+              <!-- Utilizando o método post, os dados recebidos do formulário, não ficam na url, e sim em network, do devtools -->
               <form action="valida_login.php" method="post">
                 <div class="form-group">
                   <input name="email" type="email" class="form-control" placeholder="E-mail">
@@ -44,6 +46,17 @@
                 <div class="form-group">
                   <input name="senha" type="password" class="form-control" placeholder="Senha">
                 </div>
+
+                <!-- Aqui criamos dois blocos php embutidos, e só executará o html entre eles, caso a condição do if for satisfeita -->
+
+                <? if (isset($_GET['login']) && isset($_GET['login']) == 'erro') { ?>
+
+                  <div class="text-danger font-weight-bold">
+                    <p>Usuário ou senha inválido(s).</p>
+                  </div>
+
+                <? } ?>
+
                 <button class="btn btn-lg btn-info btn-block" type="submit">Entrar</button>
               </form>
 
