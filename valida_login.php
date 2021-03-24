@@ -1,15 +1,7 @@
 <?php 
 
-	// Para recuperar os dados obtidos via requisição http inseridos na url de valida_login, é bem simples, basta:
-	/*
-	echo $_GET['email'];
-	echo "<br>";
-	echo $_GET['senha'];
-
-	echo "<pre>";
-		print_r($_GET);
-	echo "</pre>";
-	*/
+	// Aqui iremos iniciar uma sessão, para que possamos proteger algumas páginas na aplicação.
+	session_start();
 
 	// Variável que verifica se a autenticação foi realizada
 	// Começa com false, caso o usuário seja autenticado corretamente seu estado é alterado para true
@@ -34,25 +26,15 @@
 	// Agora fora do foreach, se a variável de autenticação estiver como true irá entrar no if, caso não...
 	if($usuario_autenticado == true) {
 		echo "Usuário autenticado.";
+		$_SESSION['autenticado'] = 'SIM';
 
 	} else {
+		$_SESSION['autenticado'] = 'NAO';
+
 		// ...Caso não, irá exibir para o usuário na tela de login, uma mensagem de: usuário ou senha inválidos
 
 		// Para isso utilizamos uma função nativa do php, para forçar o redirecionamento para a página indicada.
 		header('Location: index.php?login=erro');
 	}
 
-	/*
-	echo "<pre>";
-		print_r($usuarios_app);
-	echo "</pre>";
-	*/
-
-	/* Utilizando a variável global $_POST, que é um array, podemos acessar os índices e recuperar os valores contidos dentro do formulário.
-	print_r($_POST);
-
-	echo $_POST['email'];
-	echo "<br>";
-	echo $_POST['senha'];
-	*/
 ?>
