@@ -1,14 +1,8 @@
-<?php
-  session_start();
-
-  if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != 'SIM') {
-    header('Location: index.php?login=erro2');
-  }
-
-?>
+<!-- Importação do script validador de acesso -->
+<? require_once 'validador_acesso.php'; ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
     <meta charset="utf-8" />
     <title>App Help Desk</title>

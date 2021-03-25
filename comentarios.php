@@ -1,5 +1,6 @@
 <?php
 
+require_once 'validador_acesso.php';
 
 // Para recuperar os dados obtidos via requisição http inseridos na url de valida_login, é bem simples, basta:
 /*
