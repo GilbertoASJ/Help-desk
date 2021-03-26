@@ -28,6 +28,9 @@
 		echo "Usuário autenticado.";
 		$_SESSION['autenticado'] = 'SIM';
 
+		// Forçar o redirecionamento para a página home caso o usuário esteja autenticado
+		header('Location: home.php');
+
 	} else {
 		$_SESSION['autenticado'] = 'NAO';
 
