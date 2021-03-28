@@ -1,6 +1,33 @@
 <!-- Importação do script validador de acesso -->
 <? require_once 'validador_acesso.php'; ?>
 
+<?php
+
+  // Array que irá conter os chamados:
+  $chamados = [];
+  
+  // Agora que já estamos escrevendo os novos chamados em um arquivo.text, agora precisaremos exibir essas informações no script consultar chamado, e para isso vamos:
+  // Abrir o arquivo.txt
+  $arquivo = fopen('arquivo.txt', 'r');
+
+  // Agora iremos recuperar as infomrações contidas no arquivo.txt, iremos percorrer utilizando um while, isso pois enquanto houver registros(linhas) a serem recuperados, iremos executar uma lógica:
+
+  while (!feof($arquivo)) { // Utilizando o feof, percorreremos o arquivo até o seu fim, até a ultima linha
+
+    // A inteligência do fgets, faz com que seja recuperado exatamente o que estiver na determinada linha na hora da execução:
+    $registro = fgets($arquivo);
+
+    // Atribuindo cada um dos registros aos índices do array chamados:
+    $chamados[] = $registro;
+   
+    print_r($chamados);
+  };
+
+  // E sempre lembrar de finalizar esse fluxo do fopen:
+  fclose($arquivo);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>

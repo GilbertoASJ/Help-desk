@@ -10,7 +10,7 @@
 	$categoria = str_replace('-', ' ', $_POST['categoria']);
 	$descricao = str_replace('-', ' ', $_POST['descricao']);
 
-	// Utilizamos php_eol(end of line), para que no arquivo.txt, a cada chamado haja uma quebra de linha
+	// Utilizamos php_eol(end of line) para que no arquivo.txt, a cada chamado haja uma quebra de linha
 	$chamado = $titulo . ' - ' . $categoria . ' - ' . $descricao . PHP_EOL;
 
 	// ----------------------------------------------------------------------------------------------------- //
