@@ -6,7 +6,7 @@
   // Array que irá conter os chamados:
   $chamados = [];
   
-  // Agora que já estamos escrevendo os novos chamados em um arquivo.text, agora precisaremos exibir essas informações no script consultar chamado, e para isso vamos:
+  // Agora que já estamos escrevendo os novos chamados em um arquivo.txt, agora precisaremos exibir essas informações no script consultar chamado, e para isso vamos:
   // Abrir o arquivo.txt
   $arquivo = fopen('arquivo.txt', 'r');
 
@@ -19,6 +19,8 @@
 
     // Atribuindo cada um dos registros aos índices do array chamados:
     $chamados[] = $registro;
+
+    
   };
 
   // E sempre lembrar de finalizar esse fluxo do fopen:
@@ -81,6 +83,15 @@
                 // Armazenando os dados do chamado em um array
                 $chamado_dados = explode('-', $chamado);
 
+                // Verificar se o perfil é administrativo ou de usuário:
+                if($_SESSION['perfil_id'] == 2) {
+
+                  // Se for perfil de usuário, exibir apenas os chamados feito pelo usuário:
+                  if($_SESSION['id'] != $chamado_dados[0]) {
+                    continue;
+                  }
+                }
+
                 // Caso os dados do chamado sejam menor que 3, a aplicação ignora
                 if(count($chamado_dados) < 3) {
                   continue;
@@ -89,9 +100,10 @@
               ?>
               <div class="card mb-3 bg-light">
                 <div class="card-body">
-                  <h5 class="card-title"><?= $chamado_dados[0] ?></h5>
-                  <h6 class="card-subtitle mb-2 text-muted"><?= $chamado_dados[1] ?></h6>
-                  <p class="card-text"><?= $chamado_dados[2] ?></p>
+                  <!-- Exibindo as informações de cada índice na tag html -->
+                  <h5 class="card-title"><?= $chamado_dados[1] ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"><?= $chamado_dados[2] ?></h6>
+                  <p class="card-text"><?= $chamado_dados[3] ?></p>
 
                 </div>
               </div>
