@@ -7,6 +7,7 @@
   $chamados = [];
   
   // Agora que já estamos escrevendo os novos chamados em um arquivo.txt, agora precisaremos exibir essas informações no script consultar chamado, e para isso vamos:
+
   // Abrir o arquivo.txt
   $arquivo = fopen('arquivo.txt', 'r');
 
@@ -17,10 +18,24 @@
     // A inteligência do fgets, faz com que seja recuperado exatamente o que estiver na determinada linha na hora da execução:
     $registro = fgets($arquivo);
 
-    // Atribuindo cada um dos registros aos índices do array chamados:
-    $chamados[] = $registro;
+    //explode dos detalhes do registro para verificar o id do usuário responsável pelo cadastro
+    $registro_detalhes = explode('-', $registro);
 
-    
+    //(perfil id = 2) só vamos exibir o chamado, se ele foi criado pelo usuário
+    if($_SESSION['perfil_id'] == 2) {
+
+      //se usuário autenticado não for o usuário de abertura do chamado então não faz nada
+      if($_SESSION['id'] != $registro_detalhes[0]) {
+        continue; //não faz nada
+
+      } else {
+        $chamados[] = $registro; //adiciona o registro do arquivo ao array $chamados
+      }
+
+    } else {
+      $chamados[] = $registro; //adiciona o registro do arquivo ao array $chamados
+    }
+
   };
 
   // E sempre lembrar de finalizar esse fluxo do fopen:
@@ -82,15 +97,6 @@
 
                 // Armazenando os dados do chamado em um array
                 $chamado_dados = explode('-', $chamado);
-
-                // Verificar se o perfil é administrativo ou de usuário:
-                if($_SESSION['perfil_id'] == 2) {
-
-                  // Se for perfil de usuário, exibir apenas os chamados feito pelo usuário:
-                  if($_SESSION['id'] != $chamado_dados[0]) {
-                    continue;
-                  }
-                }
 
                 // Caso os dados do chamado sejam menor que 3, a aplicação ignora
                 if(count($chamado_dados) < 3) {
