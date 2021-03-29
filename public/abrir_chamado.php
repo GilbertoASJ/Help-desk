@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="icon" href="./assets/logo.png">
+    <link rel="icon" href="../assets/logo.png">
 
     <style>
       .card-abrir-chamado {
@@ -22,20 +22,7 @@
 
   <body>
 
-    <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="home.php">
-        <img src="./assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        Help Desk
-      </a>
-      
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="logoff.php">
-            SAIR
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <?php include_once("../src/menu_home.php"); ?>
 
     <div class="container">    
       <div class="row">
