@@ -53,10 +53,10 @@ $ cd Help-desk
 
 ### 🖼️ Imagens
 
-<h1 align="center"><img src="./assets/Help-Desk-Home.PNG"></h1> <hr>
-<h1 align="center"><img src="./assets/Help-Desk-Chamados.PNG"></h1> <hr>
-<h1 align="center"><img src="./assets/Help-Desk-Abrir-Chamado.PNG"></h1> <hr>
-<h1 align="center"><img src="./assets/Help-Desk-Consultar-Chamado.PNG"></h1> <hr>
+<p align="center"><img src="./assets/Help-Desk-Home.PNG"></p> <hr>
+<p align="center"><img src="./assets/Help-Desk-Chamados.PNG"></p> <hr>
+<p align="center"><img src="./assets/Help-Desk-Abrir-Chamado.PNG"></p> <hr>
+<p align="center"><img src="./assets/Help-Desk-Consultar-Chamado.PNG"></p> <hr>
 
 ### 📃 Licença
 
