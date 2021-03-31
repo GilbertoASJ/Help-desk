@@ -53,11 +53,11 @@ $ cd Help-desk
 
 ### 🖼️ Imagens
 
-<h1 align="center"><img src="./assets/Help-Desk-Home.PNG"></h1> 
-<h1 align="center"><img src="./assets/Help-Desk-Chamados.PNG"></h1> 
-<h1 align="center"><img src="./assets/Help-Desk-Abrir-Chamado.PNG"></h1> 
-<h1 align="center"><img src="./assets/Help-Desk-Consultar-Chamado.PNG"></h1> 
+<h1 align="center"><img src="./assets/Help-Desk-Home.PNG"></h1> <hr>
+<h1 align="center"><img src="./assets/Help-Desk-Chamados.PNG"></h1> <hr>
+<h1 align="center"><img src="./assets/Help-Desk-Abrir-Chamado.PNG"></h1> <hr>
+<h1 align="center"><img src="./assets/Help-Desk-Consultar-Chamado.PNG"></h1> <hr>
 
 ### 📃 Licença
 
-Este projeto está sobre a licença <a href="https://github.com/GilbertoASJ/GJMoney/blob/main/LICENSE">MIT</a>
+Este projeto está sobre a licença <a href="https://github.com/GilbertoASJ/Help-desk/blob/main/LICENSE">MIT</a>
