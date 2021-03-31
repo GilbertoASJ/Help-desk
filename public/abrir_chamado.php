@@ -47,7 +47,6 @@
                       <label>Categoria</label>
                       <select required="required" name="categoria" class="form-control">
                         <option value="" disabled selected>Selecione...</option>
-                        <option>Criação Usuário</option>
                         <option>Impressora</option>
                         <option>Hardware</option>
                         <option>Software</option>
